@@ -16,6 +16,7 @@ html(xmlns="http://www.w3.org/1999/xhtml")
 
     // Angular components
     script(src="/scripts/app.js")
+    script(src="/scripts/controllers/devices.js")
     script(src="/scripts/directives/ngModelBlur.js")
     script(src="/scripts/directives/uiSlider.js")
     script(src="/scripts/thirdparty/angular-ui/tooltip.js")
@@ -23,6 +24,6 @@ html(xmlns="http://www.w3.org/1999/xhtml")
     // Stylesheets
     link(rel='stylesheet', href='/styles/bootstrap.css')
     link(rel='stylesheet', href='/styles/jslider.css')
-    link(rel='stylesheet', href='/styles/index.css')
-  body
+    link(rel='stylesheet', href='/stylus/index.css')
+  body(ng-app="fhemDotNet")
     block content
