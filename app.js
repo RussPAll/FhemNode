@@ -4,6 +4,7 @@
 var express = require('express')
   , stylus = require('stylus')
   , nib = require('nib')
+  , proxy = require('./proxy.js')
 
 var app = express()
 
@@ -16,10 +17,11 @@ app.locals.pretty = true;
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jade')
 app.use(express.logger('dev'))
+app.use(proxy.proxy('/fhem', 'server', 8083))
 app.use(stylus.middleware(
-  { src: __dirname + '/public/stylus'
-    , compile: compile
-    , dest: __dirname + '/public/styles'
+  {
+    src: __dirname + '/public',
+    compile: compile
   }
 ));
 app.use(express.static(__dirname + '/public'));

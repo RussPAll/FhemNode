@@ -2,6 +2,9 @@
   font-size: 65%;
   text-align: left;
 }
+body {
+  padding-top: 60px;
+}
 ul.deviceList {
   list-style-type: none;
 }

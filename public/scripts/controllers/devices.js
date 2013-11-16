@@ -1,5 +1,5 @@
 ﻿fhemDotNet.controller('ThermostatListCtrl', function ThermostatListCtrl($scope, $http) {
-    $http.get('/devices').success(function (data) {
+    $http.get('http://localhost:3000/fhem/fhem?cmd=jsonlist&XHR=1').success(function (data) {
         $scope.devices = data;
     });
 
