@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<script type="text/javascript" src="../jquery/jquery-2.0.0.js"></script>
+		<script type="text/javascript" src="tmpl.js"></script>
+		<script type="text/javascript" src="draggable-0.1.js"></script>
+		<script type="text/javascript" src="jquery.dependClass-0.1.js"></script>
+		<script type="text/javascript" src="jquery.slider.js"></script>
+		<script>
+			$(function() {
+				$("#jslider").slider({
+					from: 1,
+					to: 20
+				});
+			});
+		</script>
+
+		<script type="text/javascript" src="jquery.zoneslider.options.js"></script>
+		<script type="text/javascript" src="jquery.zoneslider.pointer.js"></script>
+		<script type="text/javascript" src="jquery.zoneslider.view.js"></script>
+		<script type="text/javascript" src="jquery.zoneslider.zoneslider.js"></script>
+		<script type="text/javascript" src="jquery.zoneslider.js"></script>
+		<script>			
+			$(function() {
+				$("#zoneslider").zoneslider({
+					from: 1,
+					to: 20
+				});
+			});
+		</script>
+
+		<link rel="stylesheet" href="../../styles/jslider.css" />
+	</head>
+	<body>
+		<input id="zoneslider" value="10" />
+		<input id="jslider" value="10" />
+	</body>
+</html>

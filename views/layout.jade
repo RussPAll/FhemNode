@@ -1,15 +1,28 @@
 !!!5
-html
+html(xmlns="http://www.w3.org/1999/xhtml")
   head
-    title #{title} - My Site
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    title FhemDotNet - Homepage
+    style [ng-cloak] {display: none}
+
+    // Third party scripts
+    script(src="/scripts/thirdparty/jquery/jquery-2.0.0.js")
+    script(src="/scripts/thirdparty/angular/angular.js")
+
+    // JQuery components
+    script(src="/scripts/jslider/tmpl.js")
+    script(src="/scripts/jslider/draggable-0.1.js")
+    script(src="/scripts/jslider/jquery.dependClass-0.1.js")
+    script(src="/scripts/jslider/jquery.slider.js")
+
+    // Angular components
+    script(src="/scripts/app.js")
+    script(src="/scripts/directives/ngModelBlur.js")
+    script(src="/scripts/directives/uiSlider.js")
+    script(src="/scripts/thirdparty/angular-ui/tooltip.js")
+
+    // Stylesheets
+    link(rel='stylesheet', href='/styles/bootstrap.css')
+    link(rel='stylesheet', href='/styles/jslider.css')
+    link(rel='stylesheet', href='/styles/index.css')
   body
-    header
-      h1 My Site
-    .container
-      .main-content
-        block content
-      .sidebar
-        block sidebar
-    footer
-      p Running on node with Express, Jade and Stylus
+    block content

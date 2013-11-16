@@ -1,0 +1,41 @@
+.caption {
+  font-size: 65%;
+  text-align: left;
+}
+ul.deviceList {
+  list-style-type: none;
+}
+ul.deviceList li {
+  clear: both;
+}
+ul.deviceList li .deviceName {
+  float: left;
+  width: 8em;
+  height: 7em;
+  font-weight: bold;
+  vertical-align: middle;
+}
+ul.deviceList li .deviceProperties {
+  float: left;
+}
+ul.deviceList li .deviceProperties .desiredTemp {
+  width: 30em;
+  float: left;
+  margin-left: 1em;
+}
+ul.deviceList li .deviceProperties .currentTemp,
+ul.deviceList li .deviceProperties .currentActuator,
+ul.deviceList li .deviceProperties .mode {
+  float: left;
+  width: 7em;
+  text-align: center;
+  margin-left: 1em;
+}
+ul.deviceList li .deviceProperties .currentTemp span,
+ul.deviceList li .deviceProperties .currentActuator span,
+ul.deviceList li .deviceProperties .mode span {
+  font-size: 170%;
+}
+ul.deviceList li .deviceProperties .mode select {
+  width: 8em;
+}
