@@ -56,10 +56,10 @@
                 }
 
                 // element.slider('destroy
-                element.attr("value", controller.$viewValue);
-                element.slider(opts);
 
-                if (controller) {
+                if (controller && controller.$viewValue) {
+                    element.attr("value", controller.$viewValue);
+                    element.slider(opts);
                     controller.$render();
                 }
             };

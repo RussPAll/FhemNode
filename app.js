@@ -5,6 +5,7 @@ var express = require('express')
   , stylus = require('stylus')
   , nib = require('nib')
   , proxy = require('./proxy.js')
+  , coffee = require('coffee-script')
 
 var app = express()
 
@@ -18,6 +19,7 @@ app.set('views', __dirname + '/views')
 app.set('view engine', 'jade')
 app.use(express.logger('dev'))
 app.use(proxy.proxy('/fhem', 'server', 8083))
+app.use(require('connect-assets')())
 app.use(stylus.middleware(
   {
     src: __dirname + '/public',

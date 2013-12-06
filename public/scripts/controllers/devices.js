@@ -1,7 +1,8 @@
-﻿fhemDotNet.controller('ThermostatListCtrl', function ThermostatListCtrl($scope, $http) {
-    $http.get('http://localhost:3000/fhem/fhem?cmd=jsonlist&XHR=1').success(function (data) {
+﻿fhemDotNet.controller('ThermostatListCtrl', ["$scope", "$http", "thermostatService", function ThermostatListCtrl($scope, $http, thermostatService) {
+
+	thermostatService.getDeviceList().then(function(data) {
         $scope.devices = data;
-    });
+	});
 
     $scope.deviceTemperatureChanged = function (deviceName, newDesiredTemp) {
         $http.put('/devices/' + deviceName + "/desiredTempCommand", { 'NewDesiredTemp': newDesiredTemp}).
@@ -9,4 +10,4 @@
                 //alert("Saved a device change");
             });
     };
-});
+}]);

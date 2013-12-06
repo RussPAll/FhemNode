@@ -201,7 +201,7 @@ angular.module('fhemDotNet')
     restrict: 'E',
     replace: true,
     scope: { content: '@', placement: '@', animation: '&', isOpen: '&' },
-    templateUrl: '/content/scripts/angular-ui/tooltip-popup.html'
+    templateUrl: '/scripts/thirdparty/angular-ui/tooltip-popup.html'
   };
 })
 
