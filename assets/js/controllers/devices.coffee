@@ -1,7 +1,9 @@
 ﻿fhemDotNet.controller('ThermostatListCtrl', ["$scope", "$http", "thermostatService", ($scope, $http, thermostatService) ->
     thermostatService.getDeviceList().then (data) ->
-        alert("blah")
-        $scope.devices = data
+        $scope.devices = _.map data, ->
+            return {
+                
+            }
 
     $scope.deviceTemperatureChanged = (deviceName, newDesiredTemp) ->
         url = '/devices/' + deviceName + "/desiredTempCommand"
