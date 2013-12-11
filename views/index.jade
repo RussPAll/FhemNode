@@ -15,26 +15,31 @@ block content
   form#thermostats(name="thermostats")
       ul.deviceList(ng-controller="ThermostatListCtrl")
           li(ng-repeat="device in devices")
-              .deviceName
-                  {{device.Name}}
-              .deviceProperties
-                  .desiredTemp
-                      .sliderContainer
-                          input(type="slider" ui-slider="{'from':5,'to':29,'step':0.5}" ng-model="device.DesiredTemp.Value"
-                              ng-change="deviceTemperatureChanged(device.Name, device.DesiredTemp)")
-                  .currentTemp
-                      .caption Current Temp:
-                      span {{device.CurrentTemp.Value}}
-                      a
-                          span(tooltip="Measured at {{device.CurrentTemp.Timestamp}}")?
-                  .currentActuator
-                      .caption Actuator:
-                      span {{device.Actuator.Value}}
-                      a
-                          span(tooltip="Measured at {{device.Actuator.Timestamp}}")?
-                  .mode
-                      select(ng-model="device.Mode.Value")
-                          option(value="Auto") Auto
-                          option(value="Manu") Manu
-                      a
-                          span(tooltip="Measured at {{device.Mode.Timestamp}}")?
+              .dashboard
+                  .deviceName
+                      {{device.Name}}
+                  .deviceProperties
+                      .desiredTemp
+                          .sliderContainer
+                              input(type="slider" ui-slider="{'from':5,'to':29,'step':0.5}" ng-model="device.DesiredTemp.Value"
+                                  ng-change="deviceTemperatureChanged(device.Name, device.DesiredTemp)")
+                      .currentTemp
+                          .caption Current Temp:
+                          span {{device.CurrentTemp.Value}}
+                          a
+                              span(tooltip="Measured at {{device.CurrentTemp.Timestamp}}")?
+                      .currentActuator
+                          .caption Actuator:
+                          span {{device.Actuator.Value}}
+                          a
+                              span(tooltip="Measured at {{device.Actuator.Timestamp}}")?
+                      .mode
+                          select(ng-model="device.Mode.Value")
+                              option(value="Auto") Auto
+                              option(value="Manu") Manu
+                          a
+                              span(tooltip="Measured at {{device.Mode.Timestamp}}")?
+              .schedule
+                  .daySchedule(ng-repeat="schedule in device.Schedule")
+                      span.dayName {{schedule.DayOfWeek}}
+                      span.times {{schedule.From1}}-{{schedule.To1}}, {{schedule.From2}}-{{schedule.To2}}

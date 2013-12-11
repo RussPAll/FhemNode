@@ -1,11 +1,26 @@
 fhemDotNet.factory('thermostatService', ['$http', ($http) ->
     thermostatService =
-        _getReading: (device, readingName) ->
+        _getReadingWithTimestamp: (device, readingName) ->
             foundReading = _.find device.READINGS, (reading) -> reading[readingName]
-            {
+            if foundReading then {
                 Value: foundReading[readingName],
                 TimeStamp: foundReading.measured
             }
+            else null
+
+
+        _getReading: (device, readingName) ->
+            foundReading = _.find device.READINGS, (reading) -> reading[readingName]
+            if foundReading then foundReading[readingName] else null
+
+        _getDaySchedule: (device, dayOfWeek) ->
+            {
+                DayOfWeek: dayOfWeek,
+                From1: this._getReading(device, dayOfWeek.toLowerCase() + "-from1"),
+                To1: this._getReading(device, dayOfWeek.toLowerCase() + "-to1"),
+                From2: this._getReading(device, dayOfWeek.toLowerCase() + "-from2"),
+                To2: this._getReading(device, dayOfWeek.toLowerCase() + "-to2")
+            }            
 
         _serviceToDomain: (service) ->
             fhtDevices = _.findWhere service.Results, {list: "FHT"}
@@ -14,10 +29,19 @@ fhemDotNet.factory('thermostatService', ['$http', ($http) ->
                 (device) ->
                     {
                         Name: device.NAME,
-                        DesiredTemp: $this._getReading(device, 'desired-temp'),
-                        CurrentTemp: $this._getReading(device, 'measured-temp'),
-                        Actuator: $this._getReading(device, 'actuator'),
-                        Mode: $this._getReading(device, 'mode')
+                        DesiredTemp: $this._getReadingWithTimestamp(device, 'desired-temp'),
+                        CurrentTemp: $this._getReadingWithTimestamp(device, 'measured-temp'),
+                        Actuator: $this._getReadingWithTimestamp(device, 'actuator'),
+                        Mode: $this._getReadingWithTimestamp(device, 'mode'),
+                        Schedule : [
+                            $this._getDaySchedule(device, "Mon"),
+                            $this._getDaySchedule(device, "Tue"),
+                            $this._getDaySchedule(device, "Wed"),
+                            $this._getDaySchedule(device, "Thu"),
+                            $this._getDaySchedule(device, "Fri"),
+                            $this._getDaySchedule(device, "Sat"),
+                            $this._getDaySchedule(device, "Sun")
+                        ]
                     }
 
         getDeviceList: ->

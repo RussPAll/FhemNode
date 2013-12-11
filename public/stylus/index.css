@@ -8,37 +8,44 @@ body {
 ul.deviceList {
   list-style-type: none;
 }
-ul.deviceList li {
+ul.deviceList li .dashboard {
   clear: both;
 }
-ul.deviceList li .deviceName {
+ul.deviceList li .dashboard .deviceName {
   float: left;
   width: 8em;
   height: 7em;
   font-weight: bold;
   vertical-align: middle;
 }
-ul.deviceList li .deviceProperties {
+ul.deviceList li .dashboard .deviceProperties {
   float: left;
 }
-ul.deviceList li .deviceProperties .desiredTemp {
+ul.deviceList li .dashboard .deviceProperties .desiredTemp {
   width: 30em;
   float: left;
   margin-left: 1em;
 }
-ul.deviceList li .deviceProperties .currentTemp,
-ul.deviceList li .deviceProperties .currentActuator,
-ul.deviceList li .deviceProperties .mode {
+ul.deviceList li .dashboard .deviceProperties .currentTemp,
+ul.deviceList li .dashboard .deviceProperties .currentActuator,
+ul.deviceList li .dashboard .deviceProperties .mode {
   float: left;
   width: 7em;
   text-align: center;
   margin-left: 1em;
 }
-ul.deviceList li .deviceProperties .currentTemp span,
-ul.deviceList li .deviceProperties .currentActuator span,
-ul.deviceList li .deviceProperties .mode span {
+ul.deviceList li .dashboard .deviceProperties .currentTemp span,
+ul.deviceList li .dashboard .deviceProperties .currentActuator span,
+ul.deviceList li .dashboard .deviceProperties .mode span {
   font-size: 170%;
 }
-ul.deviceList li .deviceProperties .mode select {
+ul.deviceList li .dashboard .deviceProperties .mode select {
   width: 8em;
+}
+ul.deviceList li .schedule {
+  clear: both;
+}
+ul.deviceList li .schedule .dayName {
+  width: 5em;
+  display: inline-block;
 }

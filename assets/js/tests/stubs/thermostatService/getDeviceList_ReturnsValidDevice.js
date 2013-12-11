@@ -53,19 +53,19 @@ window.getDeviceList_ValidDevice = {
               "measured": "2013-12-10 19:30:32"
             },
             {
-              "fri-from1": "06:30",
+              "fri-from1": "05:00",
               "measured": "2013-12-10 04:06:26"
             },
             {
-              "fri-from2": "19:30",
+              "fri-from2": "05:30",
               "measured": "2013-12-10 04:06:27"
             },
             {
-              "fri-to1": "07:30",
+              "fri-to1": "05:15",
               "measured": "2013-12-10 04:06:27"
             },
             {
-              "fri-to2": "22:00",
+              "fri-to2": "05:45",
               "measured": "2013-12-10 04:06:27"
             },
             {
@@ -93,19 +93,19 @@ window.getDeviceList_ValidDevice = {
               "measured": "2013-12-10 04:08:23"
             },
             {
-              "mon-from1": "06:30",
+              "mon-from1": "01:00",
               "measured": "2013-12-10 04:04:29"
             },
             {
-              "mon-from2": "19:30",
+              "mon-from2": "01:30",
               "measured": "2013-12-10 04:04:29"
             },
             {
-              "mon-to1": "07:30",
+              "mon-to1": "01:15",
               "measured": "2013-12-10 04:04:29"
             },
             {
-              "mon-to2": "22:00",
+              "mon-to2": "01:45",
               "measured": "2013-12-10 04:04:29"
             },
             {
@@ -121,19 +121,19 @@ window.getDeviceList_ValidDevice = {
               "measured": "2013-12-10 04:02:34"
             },
             {
-              "sat-from1": "06:30",
+              "sat-from1": "06:00",
               "measured": "2013-12-10 04:06:28"
             },
             {
-              "sat-from2": "19:30",
+              "sat-from2": "06:30",
               "measured": "2013-12-10 04:06:28"
             },
             {
-              "sat-to1": "07:30",
+              "sat-to1": "06:15",
               "measured": "2013-12-10 04:06:28"
             },
             {
-              "sat-to2": "22:00",
+              "sat-to2": "06:45",
               "measured": "2013-12-10 04:06:28"
             },
             {
@@ -141,19 +141,19 @@ window.getDeviceList_ValidDevice = {
               "measured": "2013-12-10 21:59:24"
             },
             {
-              "sun-from1": "08:50",
+              "sun-from1": "07:00",
               "measured": "2013-12-10 04:06:29"
             },
             {
-              "sun-from2": "19:30",
+              "sun-from2": "07:30",
               "measured": "2013-12-10 04:06:30"
             },
             {
-              "sun-to1": "07:30",
+              "sun-to1": "07:15",
               "measured": "2013-12-10 04:06:29"
             },
             {
-              "sun-to2": "22:00",
+              "sun-to2": "07:45",
               "measured": "2013-12-10 04:06:30"
             },
             {
@@ -161,35 +161,35 @@ window.getDeviceList_ValidDevice = {
               "measured": "2013-12-10 21:59:24"
             },
             {
-              "thu-from1": "06:30",
+              "thu-from1": "04:00",
               "measured": "2013-12-10 04:06:25"
             },
             {
-              "thu-from2": "19:30",
+              "thu-from2": "04:30",
               "measured": "2013-12-10 04:06:25"
             },
             {
-              "thu-to1": "07:30",
+              "thu-to1": "04:15",
               "measured": "2013-12-10 04:06:25"
             },
             {
-              "thu-to2": "22:00",
+              "thu-to2": "04:45",
               "measured": "2013-12-10 04:06:26"
             },
             {
-              "tue-from1": "06:30",
+              "tue-from1": "02:00",
               "measured": "2013-12-10 04:04:30"
             },
             {
-              "tue-from2": "19:30",
+              "tue-from2": "02:30",
               "measured": "2013-12-10 04:04:31"
             },
             {
-              "tue-to1": "07:30",
+              "tue-to1": "02:15",
               "measured": "2013-12-10 04:04:30"
             },
             {
-              "tue-to2": "22:00",
+              "tue-to2": "02:45",
               "measured": "2013-12-10 04:04:31"
             },
             {
@@ -197,19 +197,19 @@ window.getDeviceList_ValidDevice = {
               "measured": "2013-12-10 21:59:25"
             },
             {
-              "wed-from1": "06:30",
+              "wed-from1": "03:00",
               "measured": "2013-12-10 04:04:31"
             },
             {
-              "wed-from2": "19:30",
+              "wed-from2": "03:30",
               "measured": "2013-12-10 04:04:32"
             },
             {
-              "wed-to1": "07:30",
+              "wed-to1": "03:15",
               "measured": "2013-12-10 04:04:32"
             },
             {
-              "wed-to2": "22:00",
+              "wed-to2": "03:45",
               "measured": "2013-12-10 04:04:33"
             },
             {
@@ -326,3 +326,6 @@ window.getDeviceList_ValidDevice = {
   "totalResultsReturned": 16
 }
 
+
+window.getDeviceList_ValidDeviceWithNoReadings = JSON.parse(JSON.stringify(window.getDeviceList_ValidDevice))
+window.getDeviceList_ValidDeviceWithNoReadings.Results[3].devices[0].READINGS = [];
